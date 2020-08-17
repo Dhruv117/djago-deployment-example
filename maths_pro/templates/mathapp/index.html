@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Math</title>
+    <link rel="stylesheet" href="{% static 'css/math.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+
+
+          <span><h1>Welcome to math page</h></span>
+       <br>
+
+
+
+     <h2>Perimeter of square</h2>
+     <label for="sqpe">Side of square:</label>
+     <input type="text" class="sqpe" name="" value=""><br>
+     <label for="sqou">Area of square:</label>
+     <input type="text" class="sqou" name="" value="" disabled>
+     <input type="button" class="sqsu"name="" value="Submit">
+
+<br>
+    <h2>Perimeter of rectangle</h2>
+    <label for="reside1">Rectangle lenght:</label>
+    <input type="text" class="reside1"name="" value="">
+    <br>
+    <label for="reside2">Rectangle breadth:</label>
+    <input type="text" class="reside2"name="" value="">
+    <br>
+    <label for="reou">Perimeter:</label>
+    <input type="text" class="reou"name="" value="" disabled>
+    <input type="button" class="resu" name="" value="Submit">
+    <br>
+    <h2>Area of rectangle</h2>
+    <label for="rear1">Lenght of rectangle:</label>
+    <input type="text" class="rear1" name="" value="">
+    <br>
+    <label for="rear2">Height of rectangle:</label>
+    <input type="text" class="rear2" name="" value="">
+    <br>
+    <label for="rearou">Area:</label>
+    <input type="text" class="rearou" name="" value="" disabled>
+    <input type="button" class="rearsu" name="" value="Submit">
+  </div>
+</div>
+
+    <script type="text/javascript" src="{% static 'js/math.js' %}">
+
+    </script>
+
+  </body>
+</html>
