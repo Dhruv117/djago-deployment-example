@@ -1,11 +1,13 @@
+
 <!DOCTYPE html>
 {% load static %}
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math</title>
+
     <link rel="stylesheet" href="{% static 'css/math.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+      <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
   </head>
   <body>
     <div class="container">
@@ -13,45 +15,300 @@
 
 
           <span><h1>Welcome to math page</h></span>
-       <br>
+            <br>
+   <!-- <br>
+      <div class="btn-group">
+       <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" id="dropdownmenu2"aria-hasexpanded="false">Info</button>
+        <div class="dropdown-menu" aria-labelledby="dropdownmenu2">
+          <a type="button" class="dropdown-item">CM</a>
+          <button type="button" class="dropdown-item">MM</button>
+          <button type="button" class="dropdown-item">KM</button>
+          <button type="button" class="dropdown-item">KM</button>
+
+        </div>
+
+      </div> -->
+      <div id="n" align="right">
+
+      <form id="calc" name="calc" align="right">
+        <h3 style="margin-right:20px;font-weight:bold;color:white;font-family:;">Calculator</h2>
+        <input id="output" name="display"  disabled style="width:180px;height:35px;font-size: 30px;border-radius: 5px;text-align:center;background-color=:#1f80c9;color:white;"></input>
+
+        <!-- <input id="output" name="display"  disabled style="width:250px;height:35px;font-size: 30px;border-radius: 5px;text-align:center;background-color=:#1f80c9;"></input> -->
+      <br>
+      <input id="inputt" class="AC"type="button" value="AC" onclick="calc.display.value=''" style="background-Color:#cc0000;width:70px"></input>
+      <input id="inputt" type="button" value="&divide" onclick="calc.display.value+='/'" style="background-color:green;"></input>
+      <input id="inputt" type="button" value="=" onclick="calc.display.value=eval(calc.display.value)" style="background-color:#17a2b8;width:50px;"></input>
+      <br>
+      <input  id="inputt"type="button" value="1"onclick="calc.display.value+='1'"></input>
+      <input  id="inputt"type="button" value="2" onclick="calc.display.value+='2'"></input>
+      <input  id="inputt"type="button" value="3" onclick="calc.display.value+='3'"></input>
+      <input  id="inputt"type="button" value="+" onclick="calc.display.value+='+'" style="background-color:#cc5c11;"></input>
+      <br>
+      <input  id="inputt"type="button" value="4" onclick="calc.display.value+='4'"></input>
+      <input  id="inputt"type="button" value="5" onclick="calc.display.value+='5'"></input>
+      <input id="inputt" type="button" value="6" onclick="calc.display.value+='6'"></input>
+      <input  id="inputt"type="button" value="-" onclick="calc.display.value+='-'" style="background-color:#ba55d3;"></input>
+      <br>
+      <input id="inputt" type="button" value="7" onclick="calc.display.value+='7'"></input>
+      <input id="inputt" type="button" value="8" onclick="calc.display.value+='8'"></input>
+      <input id="inputt" type="button" value="9" onclick="calc.display.value+='9'"></input>
+      <input id="inputt" type="button" value="&times" onclick="calc.display.value+='*'" style="background-color:#7db1b2;"></input>
+      <br>
+      <input  id="inputt"type="button" value="0" onclick="calc.display.value+='0'"style="width:px;"></input>
+      <input  id="inputt"type="button" value="." onclick="calc.display.value+='.'"style="width:px;font-weight:bolder;font-size:15px;"></input>
+      <input id="inputt" type="button" value="√" onclick="calc.display.value=Math.sqrt(calc.display.value)" style="background-color:#17a2b8;width:px;"></input>
+      <input id="inputt" type="button" value="Pi" onclick="calc.display.value+= pi" style="background-color:#17a2b8;width:px;"></input>
+
+      <!-- <input id="inputt" type="button" value="=" onclick="Deletee()" style="background-color:#17a2b8;"></input> -->
 
 
 
-     <h2>Perimeter of square</h2>
-     <label for="sqpe">Side of square:</label>
+    </form>
+    <input id="inputt" class="hide" type="button" value="Hide"  style="margin-top:360px;margin-left:45px;height:25px;font-weight:bolder;width:37px;"></input>
+    <input id="inputt" class="show" type="button" value="Show"  style="margin-left:10px;height:25px;width:40px;font-weight:bolder;"></input>
+  </div>
+
+
+<br>
+<br>
+
+
+
+
+     <h3>Perimeter of square</h2>
+     <label for="sqpe">Side of square</label>
      <input type="text" class="sqpe" name="" value=""><br>
-     <label for="sqou">Area of square:</label>
+     <label for="sqou">Area of square</label>
      <input type="text" class="sqou" name="" value="" disabled>
-     <input type="button" class="sqsu"name="" value="Submit">
+     <input type="button" class="btn btn-info btn-sm" id="sqsu"name="" value="Calculate" onclick="PerimeterSquare()">
+
 
 <br>
     <h2>Perimeter of rectangle</h2>
-    <label for="reside1">Rectangle lenght:</label>
+    <label for="reside1">Rectangle lenght</label>
     <input type="text" class="reside1"name="" value="">
     <br>
-    <label for="reside2">Rectangle breadth:</label>
+    <label for="reside2">Rectangle breadth</label>
     <input type="text" class="reside2"name="" value="">
     <br>
-    <label for="reou">Perimeter:</label>
+    <label for="reou">Perimeter</label>
     <input type="text" class="reou"name="" value="" disabled>
-    <input type="button" class="resu" name="" value="Submit">
-    <br>
+    <input type="button" class="btn btn-info btn-sm" id="resu" name="" value="Calculate" onclick="PerimeterRectangle()">
+<br>
+    <h2>Area of square</h2>
+    <label for="squaresi">Side</label>
+    <input type="text" class="squaresi" name="" value="">
+<br>
+    <label for="squareou">Area</label>
+    <input type="text" class="squareou" name="" value="" disabled>
+    <input type="button" class="btn btn-info btn-sm" id="squaresu" name="" value="Calculate" onclick="AreaSquare()">
+
+
+<br>
+
     <h2>Area of rectangle</h2>
-    <label for="rear1">Lenght of rectangle:</label>
+    <label for="rear1">Lenght of rectangle</label>
     <input type="text" class="rear1" name="" value="">
     <br>
-    <label for="rear2">Height of rectangle:</label>
+    <label for="rear2">Height of rectangle</label>
     <input type="text" class="rear2" name="" value="">
     <br>
-    <label for="rearou">Area:</label>
+    <label for="rearou">Area</label>
     <input type="text" class="rearou" name="" value="" disabled>
-    <input type="button" class="rearsu" name="" value="Submit">
+    <input type="button" class="btn btn-info btn-sm" id="rearsu" name="" value="Calculate" onclick="AreaRectangle()">
+
+    <h2>Surface Area of Cuboid</h2>
+    <label for="culenght">Lenght</label>
+    <input type="text" class="culenght" name="" value="">
+<br>
+    <label for="cubreadth">Breadht</label>
+    <input type="text" class="cubreadth" name="" value="">
+<br>
+    <label for="">Height</label>
+    <input type="text" class="cuheight" name="" value="">
+<br>
+    <label for="cuboidou">Surface Area</label>
+    <input type="text" name="" class="cuboidou"value="" disabled>
+    <input type="button" name=""  class="btn btn-info btn-sm" id="cuboidsu" value="Calculate" onclick="SurfaceAreaCuboid()">
+
+    <br>
+    <h2>Surface Area of Cube</h2>
+    <label for="cubeside">Side</label>
+    <input type="text" class="cubeside" name="" value="">
+<br>
+    <label for="cubeou">Surface Area</label>
+    <input type="text" class="cubeou" name="" value="" disabled>
+    <input type="button" class="btn btn-info btn-sm"id="cubesu"  name="" value="Calculate" onclick="SurfaceAreaCube()">
+
+<br>
+
+    <h2>Curved Surface Area of Cylinder</h2>
+
+    <label for="cylinderra">Radius</label>
+    <input type="text" class="cylinderra" name="" value="">
+<br>
+    <label for="cylinderhe">Height</label>
+    <input type="text" class="cylinderhe" name="" value="">
+<br>
+    <label for="">Curved Surface Area</label>
+    <input type="text" class="cylinderou" name="" value="" disabled>
+    <input type="button" class="btn btn-info btn-sm" id="cylindersu" name="" value="Calculate" onclick="CurvedSurfaceAreaCylinder()">
+
+<br>
+
+    <h2>Total Surface Area of Cylinder</h2>
+    <label for="cyradius">Radious</label>
+    <input type="text" class="cyradius" name="" value="">
+<br>
+    <label for="cyheight">Height</label>
+    <input type="text" class="cyheight" name="" value="">
+<br>
+    <label for="cyoutput">Total Surface Area</label>
+    <input type="text" class="cyoutput" name="" value="" disabled>
+    <input type="button" class="btn btn-info btn-sm" id="cysubmit" value="Calculate" onclick="TotalSurfaceAreaCylinder()">
+
+<br>
+    <h2>Curved Surface Area of Cone</h2>
+    <!-- <h4>If you don't know the lenght and know the height then insert it</h4> -->
+    <!-- Height:<input type="text" class="coneheight" name="" value=""> -->
+  <!-- <input type="button" class="btn btn-info btn-sm" id="hesubmit" name="" value=""> -->
+<!-- <br> -->
+    <label for="">Lenght</label>
+    <input type="text" class="conele"name="" value="">
+<br>
+    <label for="conera">Radius</label>
+    <input type="text" class="conera"name="" value="">
+<br>
+    <label for="coneou">Curved Surface Area</label>
+    <input type="text" class="coneou" name="" value="" disabled>
+    <input type="button" class="btn btn-info btn-sm" id="conesu"name="" value="Calculate" onclick="CurvedSurfaceAreaCone()">
+
+<br>
+
+    <h2>Total Surface Area of Cone</h2>
+    <label for="colenght">Lenght</label>
+    <input type="text" class="colenght" name="" value="">
+<br>
+    <label for="coradius">Radius</label>
+    <input type="text" class="coradius" name="" value="">
+<br>
+    <label for="">Total Surface Area</label>
+    <input type="text" class="cooutput" name="" value="" disabled>
+    <input type="button" class="btn btn-info btn-sm" id="cosubmit"name="" value="Calculate" onclick="TotalSurfaceAreaCone()">
+
+<br>
+
+    <h2>Surface Area of Sphere</h2>
+    <label for="">Radius</label>
+    <input type="text" class="spherera" name="" value="">
+<br>
+    <label for="">Surface Area of Sphere</label>
+    <input type="text" class="sphereou" name="" value="" disabled>
+    <input type="button" class="btn btn-info btn-sm" id="spheresu" name="" value="Calculate" onclick="SurfaceAreaSphere()">
+
+<br>
+
+    <h2>Curved Surface Area of Hemisphere</h2>
+    <label for="hemispherera">Radius</label>
+    <input type="text" class="hemispherera"name="" value="">
+<br>
+    <label for="hemisphereou">Curved Surface Area</label>
+    <input type="text" class="hemisphereou" name="" value="" disabled>
+    <input type="button" class="btn btn-info btn-sm" id="hemispheresu" name="" value="Calculate" onclick="CurvedSurfaceAreaHemisphere()">
+
+<br>
+
+    <h2>Total Surface Area of Hemisphere</h2>
+    <label for="heradius">Radius</label>
+    <input type="text" class="heradius" name="" value="">
+<br>
+    <label for="heoutput">Total Surface Area of Hemisphere</label>
+    <input type="text" class="heoutput" name="" value="" disabled>
+    <input type="button" class="btn btn-info btn-sm" id="hesubmit" name="" value="Calculate" onclick="TotalSurfaceAreaHemisphere()">
+
+<br>
+
+    <h2>Volume of Cuboid</h2>
+    <label for="volumelenght">Lenght</label>
+    <input type="text" class="volumelenght" name="" value="">
+<br>
+    <label for="volumebreadth">Breadth</label>
+    <input type="text" class="volumebreadth" name="" value="">
+<br>
+    <label for="volumeheight">Height</label>
+    <input type="text" class="volumeheight" name="" value="">
+<br>
+    <label for="cuboidvolume">Volume</label>
+    <input type="text" class="cuboidvolume" name="" value="" disabled>
+    <input type="button" class="btn btn-info btn-sm" id="cuboidvolumesu"value="Calculate" onclick="VolumeCuboid()">
+
+<br>
+
+    <h2>Volume of Cube</h2>
+    <label for="volumecubeside">Side</label>
+    <input type="text" class="volumecubeside" name="" value="">
+<br>
+    <label for="cubevolume">Volume</label>
+    <input type="text" class="cubevolume" name="" value="" disabled>
+    <input type="button" class="btn btn-info btn-sm" id="cubesubmit"name="" value="Calculate" onclick="VolumeCube()">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
 </div>
+<script type="text/javascript" src="{% static 'js/math.js' %}">
 
-    <script type="text/javascript" src="{% static 'js/math.js' %}">
+document.querySelector('#cylindersu').addEventListener("click",function() {
+    document.querySelector('.cylinderou').value = document.querySelector('.cylinderhe').value * document.querySelector('.cylinderra').value * 2 * pi
 
-    </script>
+});
+
+document.querySelector('#cysubmit').addEventListener.("click",function() {
+    document.querySelector('.cyoutput').value = document.querySelector('.cyradius').value * document.querySelector('.cyradius').value + document.querySelector('.cyheight').value * 2 * pi
+
+});
+function Deletee() {
+  var output = document.querySelector('#output');
+  output += output.toString().slice(0, -1);
+Deletee()
+};
+</script>
+
+<script type="text/javascript" src="{% static 'js/jquery-3.5.1.js' %}"></script>
+<script>
+
+  $(document).ready(function() {
+    $(".hide").click(function(event) {
+        $("#calc").slideUp();
+    });
+
+    $(".show").click(function(event) {
+        $("#calc").slideDown();
+    });
+  });
+</script>
 
   </body>
 </html>
+
